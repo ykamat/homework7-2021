@@ -33,10 +33,14 @@ document.querySelector("#faster").addEventListener("click", function() {
 
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skipping");
-	// video.play();
-	video.currentTime += 15;
-	if (video.currentTime > video.duration) {
-		video.currentTime = 0
+
+	if (video.currentTime + 15 > video.duration) {
+		video.currentTime = 0;
+		video.play();
+	}
+
+	else{
+		video.currentTime += 15
 	}
 	console.log(video.currentTime);
 });
